@@ -1,0 +1,1022 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blender add-on that turns dirty Plasticity/STEP CAD exports into clean quad/tri retopology.">
+      
+      
+        <meta name="author" content="poloz">
+      
+      
+        <link rel="canonical" href="https://polozad.github.io/hardcraft-docs/sources/">
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../patch/">
+      
+      
+      <link rel="icon" href="../assets/hc-badge.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>CAD sources - Hardcraft</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cad-sources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hardcraft" class="md-header__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hardcraft
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CAD sources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hardcraft" class="md-nav__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    Hardcraft
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CAD sources
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAD sources
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-metadata-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      The metadata contract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plasticity-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plasticity bridge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      STEP import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STEP import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tessellation-and-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tessellation and repair
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#re-importing-an-edited-cad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Re-importing an edited CAD
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PATCH mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CURVE mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fill types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/keymap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keymap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting a problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Known issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-metadata-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      The metadata contract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plasticity-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plasticity bridge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      STEP import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STEP import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tessellation-and-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tessellation and repair
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#re-importing-an-edited-cad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Re-importing an edited CAD
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cad-sources">CAD sources<a class="headerlink" href="#cad-sources" title="Permanent link">&para;</a></h1>
+<p><strong>Any CAD that exports STEP works.</strong> Fusion, SolidWorks, Rhino, Onshape,
+Inventor, NX, CATIA, FreeCAD — Hardcraft reads the solid, not the badge on the
+package. STEP is the general path.</p>
+<p>The <strong>Plasticity bridge</strong> is the second path: a live link to one specific
+modeller, a convenience rather than a requirement.</p>
+<p>Both paths end up as a mesh carrying the <strong>same metadata contract</strong>, so
+detection and fill are identical downstream. What differs is how much CAD truth
+survives the trip, and that changes what the fill can do.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Plasticity bridge</th>
+<th>STEP import</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extra install</td>
+<td>none</td>
+<td><a href="../install/#the-cad-converter-step-only">converter binary</a></td>
+</tr>
+<tr>
+<td>CAD face grouping (<code>face_ids</code>, <code>groups</code>)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>CAD vertices → hard boundary splits</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Surface-type oracle (plane/cylinder/torus/…)</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Periodic-face seams</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>CAD parametric UV (<code>hc_cad_uv</code>)</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>One object per CAD body</td>
+<td>❌ manual</td>
+<td>✅ automatic</td>
+</tr>
+<tr>
+<td>Tessellation control</td>
+<td>in Plasticity</td>
+<td>linear/angular deflection, re-tessellation</td>
+</tr>
+<tr>
+<td>Live round-trip while modelling</td>
+<td>✅</td>
+<td>❌ file-based</td>
+</tr>
+</tbody>
+</table>
+<p>Rule of thumb: <strong>STEP by default, bridge for live iteration in Plasticity.</strong>
+STEP carries strictly more — the surface-type oracle, periodic seams and the CAD
+parametric UV exist only there, and wrapped walls, bores and repeated features
+lean on exactly those.</p>
+<div class="admonition note">
+<p class="admonition-title">Exporter quality varies, the contract does not</p>
+<p>Different CADs write different STEP: tessellation quality, how surfaces were
+built, whether a shell is clean. Import repairs what it can and says what it
+cannot. If a body shades badly, rebuild the surface in the source CAD and
+re-export — see <a href="../known-issues/">Known issues</a>.</p>
+</div>
+<h2 id="the-metadata-contract">The metadata contract<a class="headerlink" href="#the-metadata-contract" title="Permanent link">&para;</a></h2>
+<p>Both paths hand detection the same two mesh ID-properties:</p>
+<dl>
+<dt><code>mesh["face_ids"]</code></dt>
+<dd>one integer per CAD face — the surface's persistent id.</dd>
+<dt><code>mesh["groups"]</code></dt>
+<dd>flat <code>(loop_start, loop_count)</code> pairs, one per CAD face, indexing the loop
+buffer. A polygon inherits the CAD id of its loops.</dd>
+</dl>
+<p>Each CAD face arrives as its <strong>own shell</strong> — coincident but unwelded seam
+vertices. Neighbouring faces tessellate a shared edge <em>independently</em>, so
+matching boundary edges between them is unreliable. What does coincide is CAD
+<strong>vertices</strong>: a boundary vertex whose position is shared by three or more CAD
+faces is a real CAD 0-cell, and therefore a hard segment split. Between two CAD
+vertices the run is exactly one CAD edge — one parametric curve — fitted as a
+line or an arc.</p>
+<p>That is the whole basis of detection accuracy, and the reason for the next
+warning.</p>
+<div class="admonition danger">
+<p class="admonition-title">Detection needs a raw export</p>
+<p>Editing, separating, joining or re-extracting the CAD mesh destroys the
+metadata. Detection then falls back to pure geometry and the patch/curve
+split degrades. <strong>Do not debug detection on an edited mesh</strong> — re-export
+first. This is the single most common source of "the patches make no sense".</p>
+</div>
+<h2 id="plasticity-bridge">Plasticity bridge<a class="headerlink" href="#plasticity-bridge" title="Permanent link">&para;</a></h2>
+<p>The path of least friction: export or stream from Plasticity, hit <strong>New Target
+(fill all)</strong> or <strong>New Target (empty)</strong>. Editing the CAD mid-retopo is
+supported — see <a href="#re-importing-an-edited-cad">Re-importing an edited CAD</a>.</p>
+<p>What it does <em>not</em> carry: BREP edge identity and per-vertex parametric UV. Both
+are on the wishlist for the bridge and neither is available today, so the STEP
+route is the only way to get surface-type and parametric-UV information into
+Hardcraft.</p>
+<h2 id="step-import">STEP import<a class="headerlink" href="#step-import" title="Permanent link">&para;</a></h2>
+<p>Conversion runs through the bundled OCCT converter as a background process, and
+produces more than a mesh.</p>
+<p><strong>One object per CAD body.</strong> The XCAF assembly tree is walked to its leaves and
+each part is additionally split by solid — a part built from ten solids arrives
+as ten objects, named from the STEP <code>MANIFOLD_SOLID_BREP</code> entries, with a
+<code>parts.json</code> sidecar recording the mapping.</p>
+<p><strong>A type oracle.</strong> Per CAD face, the analytic surface type OCCT reports. This is
+what makes <em>Select Similar</em> (Shift+<code>G</code> in PATCH) work at all — on the bridge it
+reports <em>No CAD oracle</em> — and lets
+fill dispatch pick a tube/grid/loft route from CAD truth rather than from
+guessed curvature.</p>
+<p><strong>Periodic seams.</strong> For a periodic face the converter traces the seam and records
+it, so the unwrap knows where the surface closes on itself instead of tearing a
+cylinder open at an arbitrary place.</p>
+<p><strong>CAD parametric UV.</strong> The converter's own <code>(u, v)</code> per corner is stamped as the
+<code>hc_cad_uv</code> loop layer (plus per-face periods for closed surfaces). Fill can then
+work in the CAD's own chart — the most reliable interior for wrapped walls and
+faces with holes, where an LSCM unwrap has to invent something.</p>
+<p>Priority when several charts exist: your manual UV cut wins, then the CAD chart,
+then LSCM.</p>
+<h3 id="tessellation-and-repair">Tessellation and repair<a class="headerlink" href="#tessellation-and-repair" title="Permanent link">&para;</a></h3>
+<p>The imported CAD mesh shades from its own tessellation, and it is also what
+you bake normals from later — so density is a per-import decision. The
+<strong>Import STEP</strong> file dialog carries it in its sidebar: a <strong>Tessellation</strong>
+preset (<em>Retopo</em> — the working default; <em>Bake</em> — dense enough to shade clean
+as a bake source) and the two numbers behind it, <strong>Chord</strong> (in the file's own
+units) and <strong>Angular</strong> (degrees), editable after picking a preset. The values
+an import ran with are remembered on the mesh and <strong>Re-import CAD</strong> repeats
+them; a denser mesh is a fresh import through the dialog. The converter floors
+the chord at 2e-4 of the body's extent so a huge model cannot explode. The
+dialog opens on the <code>STEP_LIN_DEFL</code> / <code>STEP_ANG_DEFL_DEG</code> defaults
+(<a href="../reference/settings/">Settings</a>). OCCT's mesher occasionally tears a closed
+body at a given tolerance; the repair (<code>STEP_REFINE_TORN</code>, on by default)
+re-runs only that body at denser steps, keeping the best result.</p>
+<p>Imported normals are also repaired on the way in — collapsed triangles are
+dropped, inverted normals are judged by the triangle cone, and outliers are
+judged <strong>against their own CAD face's field</strong> (a single CAD face is smooth by
+construction, so the face's own normals are the honest reference).</p>
+<div class="admonition warning">
+<p class="admonition-title">Plasticity → STEP: swept faces</p>
+<p>Plasticity writes some swept surfaces as <code>OFFSET_SURFACE</code> over a C0 base,
+which OCCT refuses to load — the face goes missing. The workaround is to
+enable <em>convert analytics to NURBS</em> on export, at the cost of the analytic
+types the oracle would otherwise give you. Check the imported body for
+missing faces before retopologizing it.</p>
+</div>
+<h2 id="re-importing-an-edited-cad">Re-importing an edited CAD<a class="headerlink" href="#re-importing-an-edited-cad" title="Permanent link">&para;</a></h2>
+<p>Fixing the CAD mid-retopo no longer costs you the work. Edit the part in the
+source CAD, re-export, and repoint the session:</p>
+<ul>
+<li><strong>STEP:</strong> one click — <strong>Re-import CAD</strong> (PATCH section of the N-panel). It
+  re-reads the same <code>.stp</code>, converts, and rebinds automatically.</li>
+<li><strong>Plasticity bridge:</strong> re-export the part, select the new import in Object
+  Mode and press <strong>Rebind Target (re-export)</strong>.</li>
+</ul>
+<p>The rebind matches every island of the old CAD to the new one by <strong>persistent
+face identity</strong> (Plasticity kernel ids, or content hashes the STEP converter
+derives per face) and translates your session onto it. The report tells you
+exactly what happened; the same text lands in the log.</p>
+<p>What happens to your patches:</p>
+<table>
+<thead>
+<tr>
+<th>CAD face after the edit</th>
+<th>Your patch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>untouched</td>
+<td>carried as-is — fills, spans, strokes, freeze all survive</td>
+</tr>
+<tr>
+<td>re-trimmed (same surface, moved edges)</td>
+<td>carried + marked <strong>stale</strong> — rebuilds on your next gesture with its parametric edits</td>
+</tr>
+<tr>
+<td>surface rebuilt / deleted</td>
+<td>the old fill is removed (there is nothing to hang it on)</td>
+</tr>
+<tr>
+<td>split into pieces</td>
+<td>the old fill stays as a <strong>legacy fill</strong> — press <code>X</code> on any piece to remove it whole</td>
+</tr>
+<tr>
+<td>frozen + geometry changed</td>
+<td>freeze is <strong>kept</strong>, reported as <em>FROZEN AT RISK</em> — you decide: rework by hand or unfreeze to rebuild</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Update the converter binary</p>
+<p>Face identity on the STEP path needs per-face entity ids from the
+<a href="../install/#the-cad-converter-step-only">converter</a>. An older binary still
+imports fine, but stamps no identity — the rebind then refuses instead of
+guessing (the log says <code>update the converter binary</code>). Objects imported
+with an older build carry no identity either: re-import them once after
+updating.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GPL-3.0-or-later
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

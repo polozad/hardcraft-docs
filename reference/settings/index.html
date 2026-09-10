@@ -1,0 +1,1101 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blender add-on that turns dirty Plasticity/STEP CAD exports into clean quad/tri retopology.">
+      
+      
+        <meta name="author" content="poloz">
+      
+      
+        <link rel="canonical" href="https://polozad.github.io/hardcraft-docs/reference/settings/">
+      
+      
+        <link rel="prev" href="../keymap/">
+      
+      
+        <link rel="next" href="../../troubleshooting/">
+      
+      
+      <link rel="icon" href="../../assets/hc-badge.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Settings - Hardcraft</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Hardcraft" class="md-header__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hardcraft
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Hardcraft" class="md-nav__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    Hardcraft
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAD sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PATCH mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CURVE mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fill types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keymap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keymap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting a problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Known issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- GENERATED by tools/docgen.py from hardcraft/config.py — do not edit by hand. -->
+
+<h1 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h1>
+<p>Hardcraft keeps <strong>one</strong> settings registry: <code>config.KNOBS</code>. It drives
+both the <code>settings.json</code> store and the generated Preferences
+widgets, so this table is the whole tunable surface.</p>
+<ul>
+<li><strong>Widget</strong> — the property's name. Only the fill switches are
+  drawn anywhere (the N-panel's <em>Fill options</em>); everything else,
+  named or dashed, is <code>settings.json</code>-only calibration —
+  deliberately not surfaced.</li>
+<li><strong>Default</strong> — the value shipped in <code>config.py</code>.</li>
+<li>Overrides live in
+  <code>&lt;blender config&gt;/hardcraft/settings.json</code>; <em>Reset all</em> in the
+  N-panel restores every default.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Widget</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COMMIT_WELD_FRAC</code><br><em>Commit weld</em></td>
+<td><code>commit_weld_frac</code></td>
+<td><code>0.001</code></td>
+<td>0 … 0.05</td>
+<td>FINAL COMMIT seam-weld distance as a fraction of mesh scale — higher fuses looser CAD doubles, too high collapses features</td>
+</tr>
+<tr>
+<td><code>MERGE_DIST_FRAC</code><br><em>Live merge</em></td>
+<td><code>merge_dist_frac</code></td>
+<td><code>0</code></td>
+<td>0 … 0.05</td>
+<td>Per-fill merge-by-distance in the combined mesh (0 = off; the session keeps patches as separate coincident islands)</td>
+</tr>
+<tr>
+<td><code>AUTO_SYM_SHARE_MIN</code><br><em>Auto-sym share</em></td>
+<td><code>auto_sym_share_min</code></td>
+<td><code>0.3</code></td>
+<td>0 … 1</td>
+<td>Auto-sym twin verdict: SANITY FLOOR on the per-direction mirror-vote share (reciprocity + area parity are the judges) — honest twins in dense clusters of small islands legitimately score low (~0.32)</td>
+</tr>
+<tr>
+<td><code>AUTO_SYM_AREA_TOL</code><br><em>Auto-sym area tol</em></td>
+<td><code>auto_sym_area_tol</code></td>
+<td><code>0.02</code></td>
+<td>0 … 0.5</td>
+<td>Auto-sym twin verdict: max relative area mismatch of a pair (a mirror is an isometry — true twins match almost exactly)</td>
+</tr>
+<tr>
+<td><code>AUTO_SYM_SHAPE_TOL</code><br><em>Auto-sym shape tol</em></td>
+<td><code>auto_sym_shape_tol</code></td>
+<td><code>0.005</code></td>
+<td>0 … 0.2</td>
+<td>Auto-sym twin verdict: how far the mirrored patch may sit from its twin's surface (p90, as a fraction of the patch's own size) — catches a pair whose areas match while the boundary wanders</td>
+</tr>
+<tr>
+<td><code>SELECT_SIMILAR_STRIP_RATIO</code><br><em>Similar strip ratio</em></td>
+<td><code>select_similar_strip_ratio</code></td>
+<td><code>0.5</code></td>
+<td>0 … 1</td>
+<td>Select Similar shape split: normal-cloud anisotropy λ1/λ0 below which a curved island counts as an open strip (fillet band) rather than a wrapping wall (bore/boss) — 90° band ≈ 0.22, 180°+ ≈ 1.0</td>
+</tr>
+<tr>
+<td><code>NEW_CUT_SPANS</code><br><em>New split spans</em></td>
+<td><code>gen_new_cut_spans</code></td>
+<td><code>4</code></td>
+<td>1 … 64</td>
+<td>Span count a freshly placed split starts at (the span counter)</td>
+</tr>
+<tr>
+<td><code>SPLIT_SNAP_PX</code><br><em>Split snap px</em></td>
+<td><code>split_snap_px</code></td>
+<td><code>14</code></td>
+<td>2 … 60</td>
+<td>Ctrl end-snap grab radius for a split end, in screen pixels — a chord end within this of a boundary span vertex glues to it (the sticky release radius is 1.5x)</td>
+</tr>
+<tr>
+<td><code>TRACKPAD_WHEEL_STEP_PX</code><br><em>Trackpad wheel step</em></td>
+<td><code>trackpad_wheel_step_px</code></td>
+<td><code>40</code></td>
+<td>-200 … 200</td>
+<td>Magic Mouse / trackpad: smooth-scroll pixels per one discrete step of the Shift/Ctrl wheel tweaks (curve span / contour, split span / angle). Negative flips the scroll direction, 0 disables</td>
+</tr>
+<tr>
+<td><code>MAX_SPAN_LEN_FRAC</code><br><em>Span length frac</em></td>
+<td><code>gen_max_span_len</code></td>
+<td><code>0.04</code></td>
+<td>0.005 … 0.5</td>
+<td>Ribbon / strip width threshold, as a fraction of mesh scale — a boundary side under this reads as a thin-strip rail instead of a plain boundary side</td>
+</tr>
+<tr>
+<td><code>SPAN_QUANTIZE</code><br><em>Quantize spans</em></td>
+<td><code>span_quantize</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Solve every curve's default span for the whole model at target creation so annulus rims and opposite grid sides get equal counts (within one span of the silhouette law). A default, not an override: the wheel still pins. Applies to the NEXT New Target</td>
+</tr>
+<tr>
+<td><code>SILHOUETTE_TOL</code><br><em>Silhouette tol</em></td>
+<td><code>silhouette_tol</code></td>
+<td><code>0.1</code></td>
+<td>0.01 … 2</td>
+<td>Max deviation of a span chord from the true arc, in UNITS (unit-abstract: 0.05 default; a Plasticity-bridge mesh reads it as 0.05 mm) — the Silhouette-span-law knob; lower = denser / tighter silhouette</td>
+</tr>
+<tr>
+<td><code>MIN_LOOP_SPANS</code><br><em>Min loop spans</em></td>
+<td><code>gen_min_loop_spans</code></td>
+<td><code>8</code></td>
+<td>3 … 64</td>
+<td>Minimum spans on a closed-loop arc (a hole / full circle)</td>
+</tr>
+<tr>
+<td><code>SURFACE_STEP_FRAC</code><br><em>Surface step</em></td>
+<td><code>gen_surface_step</code></td>
+<td><code>2</code></td>
+<td>0.1 … 10</td>
+<td>Coarse-tri surface Steiner spacing (lower = denser tri/quad soup)</td>
+</tr>
+<tr>
+<td><code>SURFACE_RECOMBINE</code><br><em>Recombine → quads</em></td>
+<td><code>surface_recombine</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Coarse-tri surface fill: merge the regular interior grid triangles into real QUADS (quad interior + tri border) instead of an all-triangle grid. Boundary stays verbatim (weld-safe); affects only coarse-tri patches. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>RECOMBINE_MATCHING</code><br><em>Recombine: global matching</em></td>
+<td><code>recombine_matching</code></td>
+<td><code>off</code></td>
+<td>—</td>
+<td>Recombine the leftover triangles by a GLOBAL optimum (Blossom maximum-weight matching) instead of the greedy pass, whose result depends on the order faces are visited — the corners lose quads and orphan triangles get smeared. Same quality gates decide which pairs may merge; unmatched tris stay tris. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>RECOMBINE_FACE_ANGLE_DEG</code><br><em>Recombine face angle</em></td>
+<td><code>recombine_face_angle</code></td>
+<td><code>40</code></td>
+<td>0 … 89</td>
+<td>Max angle between two triangles' normals for the recombine to merge them into a quad (deg): the coplanarity gate, judged together with the shape angle below</td>
+</tr>
+<tr>
+<td><code>RECOMBINE_SHAPE_ANGLE_DEG</code><br><em>Recombine shape angle</em></td>
+<td><code>recombine_shape_angle</code></td>
+<td><code>60</code></td>
+<td>0 … 89</td>
+<td>Quad-shape tolerance for the recombine (deg): higher merges more pairs into quads but allows more skewed quads; lower keeps only near-square merges</td>
+</tr>
+<tr>
+<td><code>INTERIOR_LOCAL_DENSITY</code><br><em>Local density (spans)</em></td>
+<td><code>interior_local_density</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Interior fill density follows the LOCAL boundary spans (graded lattice seeding, matched 1:1) instead of one median-based step — coarse boundary nearby gives a coarse interior, dense gives dense, and neighbours agree at shared seams. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>LATTICE_CONSTRAIN_EDGES</code></td>
+<td>—</td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Feed the edge between two neighbouring interior lattice nodes to the triangulator as a CONSTRAINT, like the boundary itself: it may not be cut, so a clean grid is guaranteed wherever it fits and triangle soup stays locked inside the cells a feature actually breaks. Escape hatch only</td>
+</tr>
+<tr>
+<td><code>LATTICE_RAILS</code><br><em>Lattice rails</em></td>
+<td><code>lattice_rails</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>A D-degenerated lattice axis (1-3 spans) lays continuous RAILS instead of sparse points: each transverse loop runs boundary-to-boundary as a constrained chain, so the coarse limit of D degenerates into a clean loft instead of triangle soup. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>RUNG_LAW</code><br><em>Rungs</em></td>
+<td><code>rung_law</code></td>
+<td><code>off</code></td>
+<td>—</td>
+<td>In the almost-loft limit of D (an axis degenerated to 1-2 loops) pair the patch's two long walls and lay transverse RUNGS — constrained wall-to-wall chains at the sparser wall's own verts — so the strip lofts instead of free-triangulating. End caps and corner features stay free triangles. Rides the rails machinery — needs Lattice rails ON. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>RUNG_CAP_TURN_DEG</code></td>
+<td>—</td>
+<td><code>55</code></td>
+<td>—</td>
+<td>Rung law: a rim segment steeper than this many degrees to the long axis counts as an end CAP — no rungs land there</td>
+</tr>
+<tr>
+<td><code>RUNG_MONO_TOL</code></td>
+<td>—</td>
+<td><code>0.15</code></td>
+<td>—</td>
+<td>Rung law: max net backstep of a wall along the long axis (fraction of the patch extent) before the law stands down for that patch</td>
+</tr>
+<tr>
+<td><code>RUNG_BANK_DEPTH_FRAC</code></td>
+<td>—</td>
+<td><code>0.2</code></td>
+<td>—</td>
+<td>Rung law: a wall run must hug its side's extreme within this fraction of the cross extent — a displaced run (notch floor) is a feature shelf and gets no rungs</td>
+</tr>
+<tr>
+<td><code>GIZMO_DENS_ZERO_SNAP</code></td>
+<td>—</td>
+<td><code>0.5</code></td>
+<td>—</td>
+<td>D gizmo: dragging past the density floor by this factor snaps the axis to 0 (loft — zero transverse loops); dragging up from 0 recovers through the floor</td>
+</tr>
+<tr>
+<td><code>LATTICE_ROW_COMPLETE</code><br><em>Row-complete lattice</em></td>
+<td><code>lattice_row_complete</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>An interior row whose end station falls outside the patch re-lays the whole axis one station coarser instead of leaving a gap — the row stays complete and evenly spaced, so the fill keeps its flow instead of triangulating across the hole. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>RAILS_SEAT_LATTICE</code><br><em>Rails seat lattice</em></td>
+<td><code>rails_seat_lattice</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>A manual rail SEATS the interior lattice on itself: a whole station row lands on the drawn line, so both its banks are complete cells and recombine into quads, and the rail is subdivided by the fill's own rows instead of by the boundary. The patch is never re-aimed — a rail adds a rule, it does not rewrite the flow. OFF leaves a rail as a bare constrained chain. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>FEATURE_COLLAR</code><br><em>Feature collar</em></td>
+<td><code>feature_collar</code></td>
+<td><code>off</code></td>
+<td>—</td>
+<td>Dense boundary runs (cutout rims, notches) emit an interior twin row one local span inside — a tight fringe of short edges around features that survives coarse D (the core can degenerate to a loft while features stay crisply outlined). Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>PLANAR_NGON_VIEW</code><br><em>Limited dissolve on flat</em></td>
+<td><code>planar_ngon_view</code></td>
+<td><code>off</code></td>
+<td>—</td>
+<td>Collapse a FLAT patch's triangle fill into limited-dissolve NGONS (edit-view cleanliness; boundary, hole rims and cut edges survive). The final mesh is unchanged: the normal transfer force-triangulates ngons first. Re-fill to see it</td>
+</tr>
+<tr>
+<td><code>DEGENERATE_MAX_ASPECT</code><br><em>Degenerate aspect</em></td>
+<td><code>gen_degen_aspect</code></td>
+<td><code>50</code></td>
+<td>2 … 200</td>
+<td>Drop a small-minor patch as a sliver above this bbox aspect</td>
+</tr>
+<tr>
+<td><code>AUTO_SUPPORT_CHORD</code></td>
+<td>—</td>
+<td><code>off</code></td>
+<td>—</td>
+<td>Synthesize a transverse fence cut on a holed curved patch whose feature is pressed against the rim, recorded as an ordinary plan cut you can tweak or delete (deleting it is remembered, so a re-fill does not put it back). An explicit cut of your own always outranks it</td>
+</tr>
+<tr>
+<td><code>LATTICE_SNAP_EVEN_FRAC</code></td>
+<td>—</td>
+<td><code>0.2</code></td>
+<td>—</td>
+<td>Evenness guard on lattice station snapping: snapping may distort a gap between stations by at most this fraction of its even value — beyond that the whole axis reverts to evenly spaced stations. Lower = stricter, snaps less often</td>
+</tr>
+<tr>
+<td><code>RING_PREFERRED_MAX</code></td>
+<td>—</td>
+<td><code>0</code></td>
+<td>0 … 256</td>
+<td>ceiling on a radius class's full-circle count (0 = none); the Low detail preset sets 16</td>
+</tr>
+<tr>
+<td><code>SPAN_RADIUS_CLASS</code></td>
+<td>—</td>
+<td><code>on</code></td>
+<td>—</td>
+<td>L2 radius classes: every arc of one radius shares a full-circle count snapped to the preferred ring numbers (4 8 12 16 24 32 48 64); each arc takes its angular share. Escape hatch — OFF keeps the per-curve silhouette law inside the quantizer</td>
+</tr>
+<tr>
+<td><code>CLASS_R_FRAC</code></td>
+<td>—</td>
+<td><code>0.03</code></td>
+<td>0.001 … 0.2</td>
+<td>L2: relative radius tolerance that groups arcs into one class</td>
+</tr>
+<tr>
+<td><code>TUBE_RELAX_ITERS</code></td>
+<td>—</td>
+<td><code>3</code></td>
+<td>0 … 20</td>
+<td>tube kernel: interior relax iterations after the lay (0 = off)</td>
+</tr>
+<tr>
+<td><code>RING_SNAP_FRAC</code></td>
+<td>—</td>
+<td><code>0.35</code></td>
+<td>0 … 1</td>
+<td>L2: a ring's law count snaps to a preferred number only within this fraction of itself (0.35 = 13→12 yes, 5→8 no)</td>
+</tr>
+<tr>
+<td><code>SPAN_PREPASS</code></td>
+<td>—</td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Two-phase build: every selected patch registers its boundary span contract and the shared seams are reconciled BEFORE anything is filled, so a first build equals a rebuild. Escape hatch only — turning it off brings back first-build/rebuild differences</td>
+</tr>
+<tr>
+<td><code>PICK_TOL_FRAC</code><br><em>Pick tolerance</em></td>
+<td><code>pick_tol_frac</code></td>
+<td><code>0.012</code></td>
+<td>0.002 … 0.06</td>
+<td>Hover/select tolerance for curves AND cuts as a fraction of mesh scale (one value for both). Lower = picks only what is right under the cursor — lets you place cuts densely; higher grabs neighbours</td>
+</tr>
+<tr>
+<td><code>CONTOUR_BIAS_MAX</code><br><em>Density max</em></td>
+<td><code>contour_bias_max</code></td>
+<td><code>4</code></td>
+<td>0.5 … 6</td>
+<td>Density (Ctrl+Wheel) redistribution LIMIT — the strongest bias the wheel can reach. Density is EXPONENTIAL: the peak:flat sample ratio is e^bias (~55x at 4, ~400x at 6), so a small bias already bunches HARD. Distribution only; the span count is unchanged</td>
+</tr>
+<tr>
+<td><code>CONTOUR_BIAS_STEP</code><br><em>Density step</em></td>
+<td><code>contour_bias_step</code></td>
+<td><code>0.5</code></td>
+<td>0.1 … 2</td>
+<td>Density bias change per Ctrl+Wheel notch (smaller = finer control)</td>
+</tr>
+<tr>
+<td><code>CONTOUR_RANGE_LO</code><br><em>Ramp start</em></td>
+<td><code>contour_range_lo</code></td>
+<td><code>0.2</code></td>
+<td>0 … 1</td>
+<td>Density RAMP start — a curve whose curvature VARIES less than this (normalized range) gets NO densify. Pure arcs / straights stay uniform. Lower it to densify gentler curves (e.g. a variable-radius arc). Below the old hard 0.5 gate, the warp now ramps in smoothly</td>
+</tr>
+<tr>
+<td><code>CONTOUR_RANGE_HI</code><br><em>Ramp full</em></td>
+<td><code>contour_range_hi</code></td>
+<td><code>0.6</code></td>
+<td>0 … 1</td>
+<td>Density RAMP full — at/above this curvature variation the curve gets the FULL dialed bias; between Start and Full it scales smoothly (no on/off cliff). Lower it so borderline curves densify harder</td>
+</tr>
+<tr>
+<td><code>CONTOUR_SMOOTH_FRAC</code><br><em>Contour smooth</em></td>
+<td><code>contour_smooth_frac</code></td>
+<td><code>0.15</code></td>
+<td>0 … 1</td>
+<td>Curvature-smooth window for contour densification, as a fraction of the curve's arc length (Gaussian σ). The quality knob — higher smooths the density warp over a longer span; 0 disables smoothing</td>
+</tr>
+<tr>
+<td><code>STEP_CONVERTER_BIN</code><br><em>CAD converter</em></td>
+<td><code>step_converter_bin</code></td>
+<td>``</td>
+<td>—</td>
+<td>Standalone CAD converter EXECUTABLE (the external dependency: OCC lives outside Blender). Leave empty and drop it into <blender config>/hardcraft/bin/ instead — that slot is found automatically and survives a Blender upgrade. Dev fallback: the OCP-python source path (STEP_CONVERTER_PY, settings.json only)</td>
+</tr>
+<tr>
+<td><code>STEP_CONVERTER_PY</code><br><em>OCP python</em></td>
+<td><code>step_converter_py</code></td>
+<td>``</td>
+<td>—</td>
+<td>Python executable with the OCP (OpenCASCADE) bindings installed (pip install cadquery-ocp) — the bundled STEP→glb converter runs through it as a subprocess. Dev fallback only — empty is the normal state; the compiled converter is the path</td>
+</tr>
+<tr>
+<td><code>STEP_NAME_SUFFIX</code><br><em>Name suffix</em></td>
+<td><code>step_name_suffix</code></td>
+<td><code>_high</code></td>
+<td>—</td>
+<td>Appended to every object name the STEP import creates: the default '_high' turns the CAD body 'striker_pin' into 'striker_pin_high' (the import IS the high-poly source). Empty keeps the raw CAD names</td>
+</tr>
+<tr>
+<td><code>APPLY_NAME_SUFFIX</code><br><em>Low suffix</em></td>
+<td><code>apply_name_suffix</code></td>
+<td><code>_low</code></td>
+<td>—</td>
+<td>Apply naming convention: the finalized mesh inherits the CAD target's base name (hardcraft_retopo_ and the STEP '_high' suffix stripped) plus this suffix — the default '_low' pairs with '_high' for baking</td>
+</tr>
+<tr>
+<td><code>APPLY_SURFACE_MODIFIERS</code><br><em>Surface modifiers</em></td>
+<td><code>apply_surface_modifiers</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Apply leaves a LIVE shading stack on the result (Smooth by Angle 30° + Weighted Normal keep_sharp) — untick for a bare mesh</td>
+</tr>
+<tr>
+<td><code>APPLY_PACK_UV</code><br><em>Pack UV</em></td>
+<td><code>apply_pack_uv</code></td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Apply packs the CAD charts into 0..1 with Blender's native Pack Islands after marking the seams</td>
+</tr>
+<tr>
+<td><code>STEP_REFINE_TORN</code></td>
+<td>—</td>
+<td><code>on</code></td>
+<td>—</td>
+<td>Re-mesh a STEP body whose tessellation came out TORN (adjacent faces left unstitched by sloppy CAD tolerances). Only the torn body is redone, on a fixed density ladder, keeping the least torn result; off = import the tear and report it</td>
+</tr>
+<tr>
+<td><code>STEP_LIN_DEFL</code></td>
+<td>—</td>
+<td><code>0.05</code></td>
+<td>—</td>
+<td>Default chordal deflection the Import STEP dialog opens with, in the file's author units — tessellation density of the imported mesh (lower = denser; the dialog's Retopo/Bake presets and fields decide each import). A quality knob, not a completeness one: no faces are lost at any setting, but a coarse tessellation hands the normal repair needle triangles on fillets. The converter floors it at 2e-4 x the body's own extent (explosion guard)</td>
+</tr>
+<tr>
+<td><code>STEP_ANG_DEFL_DEG</code></td>
+<td>—</td>
+<td><code>15</code></td>
+<td>—</td>
+<td>Default angular deflection (degrees) the Import STEP dialog opens with — the companion density knob to the chordal one</td>
+</tr>
+<tr>
+<td><code>ORACLE_CORNER_DEG</code></td>
+<td>—</td>
+<td><code>15</code></td>
+<td>—</td>
+<td>Minimum turn (degrees) for a CAD edge endpoint to count as a boundary corner. Below it a tangent junction — fillet meeting a line, a cosmetic edge split — stays merged, so representation noise in the CAD does not seam a smooth run</td>
+</tr>
+<tr>
+<td><code>MASS_SPAN_DEBOUNCE_MS</code></td>
+<td>—</td>
+<td><code>300</code></td>
+<td>—</td>
+<td>Idle milliseconds after the last Shift+Wheel notch before a mass-span gesture commits — the whole turn becomes ONE rebuild and ONE undo step. Raise it if a slow wheel commits mid-gesture</td>
+</tr>
+<tr>
+<td><code>MASS_SPAN_REALTIME_MAX</code></td>
+<td>—</td>
+<td><code>20</code></td>
+<td>—</td>
+<td>Selections up to this many patches rebuild on EVERY Shift+Wheel notch (realtime); larger selections fall back to the debounced single commit. 0 = always debounce</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GPL-3.0-or-later
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

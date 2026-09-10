@@ -1,0 +1,976 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blender add-on that turns dirty Plasticity/STEP CAD exports into clean quad/tri retopology.">
+      
+      
+        <meta name="author" content="poloz">
+      
+      
+        <link rel="canonical" href="https://polozad.github.io/hardcraft-docs/curve/">
+      
+      
+        <link rel="prev" href="../patch/">
+      
+      
+        <link rel="next" href="../fills/">
+      
+      
+      <link rel="icon" href="../assets/hc-badge.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>CURVE mode - Hardcraft</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curve-mode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hardcraft" class="md-header__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hardcraft
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CURVE mode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hardcraft" class="md-nav__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    Hardcraft
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAD sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PATCH mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CURVE mode
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    CURVE mode
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spans-and-contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spans and contour
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ring-anchor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ring anchor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#region-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      Region split
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#side-roles-and-core-span" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side roles and core span
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fill types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/keymap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keymap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting a problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Known issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spans-and-contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spans and contour
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ring-anchor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ring anchor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#region-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      Region split
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#side-roles-and-core-span" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side roles and core span
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="curve-mode">CURVE mode<a class="headerlink" href="#curve-mode" title="Permanent link">&para;</a></h1>
+<p>Press <code>5</code> (or <code>Tab</code> from PATCH — it toggles between the two). CURVE is where
+mesh density actually comes from, and where you split a patch into something
+the fill can handle.</p>
+<p>A <strong>curve</strong> is one boundary segment of a built patch — one CAD edge, fitted as a
+line or an arc. It is CAD truth: rigid, refit onto the surface. You do not move
+it, you decide <strong>how it is sampled</strong>, and the interior follows.</p>
+<div class="admonition note">
+<p class="admonition-title">Built patches only</p>
+<p>CURVE works on patches that really exist in the mesh. Fill first
+(<a href="../patch/">PATCH</a>), then tune.</p>
+</div>
+<h2 id="spans-and-contour">Spans and contour<a class="headerlink" href="#spans-and-contour" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LMB</strong> / <strong>Shift+LMB</strong> / <strong>Ctrl+LMB</strong></td>
+<td>select / add / remove curves</td>
+</tr>
+<tr>
+<td><strong>LMB drag</strong></td>
+<td>box-select curves (front-facing only — nothing hidden behind the shell)</td>
+</tr>
+<tr>
+<td><strong>Shift+<code>G</code></strong></td>
+<td>select every curve <strong>like the hovered one</strong></td>
+</tr>
+<tr>
+<td><strong>Shift+Wheel</strong></td>
+<td><strong>span</strong> — segment count of the selected curves, ±1</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Wheel</strong></td>
+<td><strong>contour</strong> — redistribute the samples, count unchanged</td>
+</tr>
+<tr>
+<td><strong>Alt+Wheel</strong></td>
+<td><strong>core span</strong> — the interior tube between the two selected curves, ±1 (<a href="#side-roles-and-core-span">below</a>)</td>
+</tr>
+<tr>
+<td><strong><code>E</code></strong></td>
+<td><strong>type the spans</strong> — digits, <code>Enter</code>; every selected curve lands on that exact count</td>
+</tr>
+<tr>
+<td><strong><code>F</code></strong></td>
+<td>reset the selected curves (span + contour) back to computed</td>
+</tr>
+<tr>
+<td><strong>Ctrl+<code>C</code></strong> / <strong>Ctrl+<code>V</code></strong></td>
+<td><strong>copy</strong> the span of the curve under the cursor / <strong>paste</strong> it onto the selected curves as an exact count</td>
+</tr>
+</tbody>
+</table>
+<p><em>Select Similar</em> here matches by what a curve <strong>is</strong>: the same segment type,
+open or closed alike, and the same length within a tolerance (<code>F9</code> to widen
+it). A closed ring's length stands in for its radius, so "all the rims of this
+bore size" is one keystroke — and it works on OBJ imports too, no CAD oracle
+needed. The result replaces the selection; accumulate with Shift+LMB.</p>
+<p>That pairs with the wheel and <code>E</code>: Shift+<code>G</code> the run of same-size rims, then
+one gesture tunes them all — the finer-grained sibling of the PATCH-mode
+<a href="../patch/#spans-across-a-multi-selection">mass tweak</a>.</p>
+<p>The copy reads the <strong>hovered</strong> curve, so the selection stays the paste target.
+One buffer per session, shared with the PATCH-mode U/V copy
+(<a href="../patch/#spans-across-a-multi-selection">PATCH</a>); nothing under the cursor
+or an empty buffer → Blender's own Ctrl+<code>C</code> / Ctrl+<code>V</code>.</p>
+<p><strong>Span</strong> is the count. It propagates to every patch sharing that curve, and the
+weld between them is preserved — that is the point of tuning at the boundary
+rather than inside one patch.</p>
+<p><strong>Contour</strong> is the distribution: bunch samples where the curve bends, thin them
+where it runs flat. Orthogonal to span, so the two never fight.</p>
+<p><strong>CAD seams.</strong> The seam of a wrapped CAD surface (a cylinder wall, a revolved
+band) appears as a curve once the patch is <strong>built</strong>. On a tube its count is
+the axial row count; on a smart-filled wall it is the lattice's own row count
+along the seam, and the fill lays its banks at exactly that — the number you
+see is the geometry. The first span notch takes the seam over from there
+(rows on a tube, banks on a wall); <code>X</code> on such a seam puts it back to
+automatic — every seam of that patch together.</p>
+<p>By default spans are not guessed from radius but from <strong>silhouette error</strong>: a
+curve gets the count that holds its chord within an absolute tolerance of the
+true arc. Small arcs stay cheap, large arcs stay round, and the result does not
+change when the model's overall size does. The tolerance is the
+<code>SILHOUETTE_TOL</code> setting, expressed in the CAD's own working units (0.05 by
+default — 0.05 mm on a millimetre-authored model).</p>
+<h2 id="ring-anchor">Ring anchor<a class="headerlink" href="#ring-anchor" title="Permanent link">&para;</a></h2>
+<p>A closed ring — a bore rim, a round hole — has no natural start point, so its
+sampling can begin anywhere, which shows up as a rotated vertex ring.</p>
+<ul>
+<li><strong><code>A</code></strong> — hover the ring, press: the anchor lands on the ring sample nearest
+  the cursor.</li>
+<li><strong>Alt+<code>A</code></strong> — clear the anchor of the hovered ring, or all of them when
+  hovering nothing.</li>
+</ul>
+<p>Bridge exports carry no parametric seam for rings, so this is a manual call by
+design.</p>
+<h2 id="region-split">Region split<a class="headerlink" href="#region-split" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">This is not a cut</p>
+<p><code>C</code> does not slice geometry like a modelling loop cut. It draws a <strong>region
+curve</strong>: a new boundary that <strong>partitions the patch</strong>. Each region is then
+classified and filled on its own and welded at the seam — so both sides can
+come back different from what was there before, by design.</p>
+<p>That is how a face with a cut-out or an awkward feature gets a sane result:
+not one heuristic covering everything, but a smaller, honest problem on each
+side. Expect "re-decide both sides", not "an edge loop appeared".</p>
+</div>
+<p><strong><code>C</code></strong> arms the split. Hover a built patch and the chord previews live,
+perpendicular to the mesh flow.</p>
+<table>
+<thead>
+<tr>
+<th>While armed</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LMB</strong></td>
+<td>commit it — and stay armed for the next one</td>
+</tr>
+<tr>
+<td><strong><code>C</code></strong></td>
+<td>toggle <strong>auto ⊥ chord</strong> ⇄ <strong>2-point</strong> mode</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Wheel</strong></td>
+<td>spin the auto chord off perpendicular</td>
+</tr>
+<tr>
+<td><strong>Shift+Wheel</strong></td>
+<td>span count of the <em>next</em> split</td>
+</tr>
+<tr>
+<td><strong>Ctrl</strong> (held)</td>
+<td>snap the chord's end to the nearest boundary vertex (sticky)</td>
+</tr>
+</tbody>
+</table>
+<p>In 2-point mode each click snaps to the nearest boundary span vertex and the curve
+runs strictly between them. A <strong>tube</strong> (a closed wall with two rims) takes no
+split — its fill is a bridge that ignores cuts, and <code>C</code> says so instead of
+storing a dead one.</p>
+<p><strong><code>X</code></strong> deletes a selected region curve. Only your own committed ones are
+deletable — a CAD curve stays put and the operator says so.</p>
+<h2 id="side-roles-and-core-span">Side roles and core span<a class="headerlink" href="#side-roles-and-core-span" title="Permanent link">&para;</a></h2>
+<p>When you want a quad highway through a patch instead of a graded fill, mark the
+sides:</p>
+<table>
+<thead>
+<tr>
+<th>Panel button</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flow</strong></td>
+<td>this side feeds the quad core verbatim</td>
+</tr>
+<tr>
+<td><strong>Relief</strong></td>
+<td>this side absorbs the transition</td>
+</tr>
+<tr>
+<td><strong>Clear</strong></td>
+<td>remove the role</td>
+</tr>
+</tbody>
+</table>
+<p>Two opposite <strong>Flow</strong> sides plus a core span route the patch to the quad-highway
+fill. Roles are per patch: the shared curve keeps its seam contract and the
+neighbour is unaffected.</p>
+<p><strong>Core span</strong> sets the patch's interior resolution directly. Select the two
+opposite curves you want to <em>reduce</em>, run it: both are marked Relief, the
+boundary is kept verbatim, and an N-span interior tube is joined to each selected
+curve through a transition band. The seam still welds at full boundary
+resolution — nothing is sub-split behind your back.</p>
+<p><strong>Alt+Wheel</strong> does the same from the wheel. The number reads on the pair as
+<strong>core N</strong> next to the span labels: it starts at the pair's own span and only
+goes <em>down</em> from there — the core reduces, it never grows past the sides, and at
+the pair's span the patch simply fills plain again. The core belongs to that
+pair: pick the other pair of the same patch, <strong>Clear</strong> the roles, or <code>F</code>-reset
+one of its curves, and it starts over from the new pair's span.</p>
+<p>Where the gesture cannot apply it says so — a coloured line in the HUD block on
+the left, not just the status bar: the selection must be <strong>two curves of one
+patch</strong>, and the two other sides (the <em>caps</em> the interior grid runs between)
+must carry <strong>equal spans</strong> — Shift+Wheel them equal first. That equality is a
+limit of the highway grid, kept on purpose.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GPL-3.0-or-later
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blender add-on that turns dirty Plasticity/STEP CAD exports into clean quad/tri retopology.">
+      
+      
+        <meta name="author" content="poloz">
+      
+      
+        <link rel="canonical" href="https://polozad.github.io/hardcraft-docs/changelog/">
+      
+      
+        <link rel="prev" href="../known-issues/">
+      
+      
+      
+      <link rel="icon" href="../assets/hc-badge.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Changelog - Hardcraft</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hardcraft" class="md-header__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hardcraft
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hardcraft" class="md-nav__button md-logo" aria-label="Hardcraft" data-md-component="logo">
+      
+  <img src="../assets/hc-badge.svg" alt="logo">
+
+    </a>
+    Hardcraft
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAD sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PATCH mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CURVE mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fill types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/keymap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keymap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting a problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Known issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#088-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.8-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#087-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.7-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#086-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.6-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#085-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.5-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#080-alpha2" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.0-alpha.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#080-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.0-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha5" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha4" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha2-first-public-alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.2 — first public alpha
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha1-pulled" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.1 — pulled
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.4.0-alpha.1 — pulled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      What it does
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting it
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-limits-in-this-alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known limits in this alpha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#088-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.8-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#087-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.7-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#086-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.6-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#085-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.5-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#080-alpha2" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.0-alpha.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#080-alpha1" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.0-alpha.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha5" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha4" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha2-first-public-alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.2 — first public alpha
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#040-alpha1-pulled" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0-alpha.1 — pulled
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.4.0-alpha.1 — pulled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      What it does
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting it
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-limits-in-this-alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known limits in this alpha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
+<p>Entries land here as versions ship, newest first: one section per version, with
+what changed for <strong>you</strong> — workflow, defaults, and anything that needs action on
+upgrade. Implementation detail stays in the commit history.</p>
+<p>The internal <code>0.1</code>–<code>0.3</code> tags predate most of the current tool and say nothing
+useful about it, so they are deliberately not listed.</p>
+<h2 id="088-alpha1">0.8.8-alpha.1<a class="headerlink" href="#088-alpha1" title="Permanent link">&para;</a></h2>
+<p>The current build — check the
+<a href="https://github.com/polozad/hardcraft-dist/releases/latest">releases page</a> for
+availability.</p>
+<ul>
+<li><strong>One density law, three presets.</strong> Every span now comes from one number —
+  the silhouette tolerance — and <strong>Low / Mid / High</strong> pick it (0.2 / 0.1 /
+  0.05; <em>Low</em> also caps full rings at 16). The buttons sit under <em>New Target</em>
+  and are chosen <strong>before</strong> the target is made; <em>Save</em> keeps your own point
+  under a name. <a href="../quickstart/#2-create-the-retopo-target">Quick start</a>.</li>
+<li><strong>Spans are solved once per target.</strong> Opposite sides of a grid, the two rims
+  of a tube and the three arcs of a fillet corner get equal counts from one
+  model-wide solve; arcs of one radius share a ring count snapped to
+  4 · 8 · 12 · 16 · 24 · 32 · 48 · 64. Identical fillets get identical spans
+  on every preset. <strong>Re-solve spans</strong> (panel, <em>All</em> / <em>Selection</em>) runs it
+  again with your wheel pins kept.
+  <a href="../patch/#where-density-comes-from">PATCH</a>.</li>
+<li><strong>Straights stay straight.</strong> A straight is 1 span until you wheel it — no
+  fill kernel and no solver changes that. Kernels no longer alter any curve
+  count at all: a patch that cannot grid on the counts it is given bridges or
+  falls to triangles honestly, and one notch on the offending curve is the
+  fix.</li>
+<li><strong>Tubes.</strong> A ring wheel changes only that ring's row; the tube keeps its own
+  count around; the two rims are always equal in the auto fill (the lower one
+  rises). Bent tubes (an elbow, a U) lay their rows along the bend; a cone
+  fills as it is — rims at their own counts, a single transition band at the
+  wide rim. Skirt rows relax in-structure.</li>
+<li><strong>CAD seams of smart-filled walls</strong> show the lattice's row count and lay
+  their banks at it from the first fill — the number on the seam is the
+  geometry; the first notch starts from it.
+  <a href="../curve/#spans-and-contour">CURVE</a>.</li>
+<li><strong>Why this count.</strong> <em>Report selected faces</em> traces each side's span: law →
+  ring share → radius class → solve → override → inherited.
+  <a href="../reporting/">Reporting</a>.</li>
+<li>Faster: target entry 0.7 → 0.14 s on a 400-island part; the G/R/S/D drag on
+  an 11k-triangle smart fill 40 → 7 ms; a smart-fill release frame 138 → 70 ms.</li>
+<li>Settings gone (a stale key in <code>settings.json</code> is ignored):
+  <code>SPAN_SILHOUETTE_LAW</code>, <code>EPS_MAX_FRAC</code>, <code>MAX_SPAN_ANGLE_DEG</code>,
+  <code>ANGLE_SPAN_HYST</code>, <code>STRAIGHT_LEN_SUBDIV_FACTOR</code>, <code>SPAN_DENSITY_CAP</code>,
+  <code>DENSITY_RATIO_CAP</code>. New: <code>RING_PREFERRED_MAX</code> (the preset's ring
+  ceiling), <code>TUBE_RELAX_ITERS</code>.</li>
+<li>Upgrade: existing targets keep the spans they were built with — make a
+  <strong>New Target</strong> to get the solved ones.</li>
+</ul>
+<h2 id="087-alpha1">0.8.7-alpha.1<a class="headerlink" href="#087-alpha1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Core span on Alt+Wheel.</strong> In CURVE, select the two curves to reduce and
+  wheel: the interior tube's span reads as <strong>core N</strong> on the pair, starts at
+  the pair's own span, only goes down, and fills plain again at the top. The
+  core belongs to the pair — the other pair, <em>Clear</em>, or <code>F</code> start it over.
+  <a href="../curve/#side-roles-and-core-span">CURVE</a>.</li>
+<li><strong>Problems are said where you look.</strong> A refused gesture (no curve selected,
+  contour on a cut, core span on the wrong selection or on unequal caps) shows
+  as a coloured line in the HUD block on the left for a few seconds; the
+  status bar still logs it.</li>
+<li>Fix: weld preview showed the mirrored ghost as tint only — its wire is back
+  at any distance, and it no longer shows through the part. The
+  <code>SYM_WIRE_CAP_FRAC</code> setting is gone (a stale key in <code>settings.json</code> is
+  ignored).</li>
+<li>Fix: two identical curves contoured by different amounts under Ctrl+Wheel —
+  the contour no longer depends on how the CAD tessellated the curve.</li>
+<li>Fix: turning the <em>Core span</em> knob in the redo popup could crash Blender.</li>
+<li>Fix: <em>Core span</em> on unequal caps used to do nothing silently; it now refuses
+  and says why.</li>
+</ul>
+<h2 id="086-alpha1">0.8.6-alpha.1<a class="headerlink" href="#086-alpha1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Tessellation is chosen per import.</strong> The <em>Import STEP</em> file dialog carries
+  a <strong>Tessellation</strong> preset (<em>Retopo</em> / <em>Bake</em> / <em>Custom</em>) with the <strong>Chord</strong>
+  and <strong>Angular</strong> numbers behind it; the density an import ran with is
+  stamped on the mesh, and <em>Re-import</em> repeats it instead of silently
+  changing it. <a href="../sources/#tessellation-and-repair">CAD sources</a>.</li>
+<li><strong>Split works on a flat plate with cut-outs</strong> — the ordinary split's auto
+  chord now stops at the hole rims; before, only the vertex-snapped two-point
+  split did anything on a holed plate.</li>
+<li><strong>File → New starts clean.</strong> Every session cache resets with the scene, so
+  re-importing the same STEP after <em>New</em> no longer sees the closed file's
+  state (the Import dialog re-seeds its numbers — the converter used to refuse
+  with <em>"invalid parameter value"</em>). Settings are untouched.</li>
+<li>Fix: on commit, the UV seam of a periodic wall (cylinder, revolved skirt) is
+  one straight rail — it used to zig-zag across neighbouring edges, worst
+  after a section-count tweak.</li>
+</ul>
+<h2 id="085-alpha1">0.8.5-alpha.1<a class="headerlink" href="#085-alpha1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Copy / paste spans</strong> — Ctrl+<code>C</code> takes the span of the curve (or the U/V of
+  the patch) under the cursor, Ctrl+<code>V</code> sets it on the selection.
+  <a href="../curve/#spans-and-contour">CURVE</a> · <a href="../patch/#spans-across-a-multi-selection">PATCH</a>.</li>
+<li><strong>The flow guide only orients</strong> — <code>W</code> sets the lattice direction and nothing
+  else; it no longer inserts a section or an edge chain. The gesture is no
+  longer fenced by the patch boundary (release anywhere; Ctrl sticks to the
+  nearest vertex on screen). Existing guided patches want a re-fill.</li>
+<li><strong>UV Cut removed</strong> (<a href="../curve/#spans-and-contour">why</a>); a split on a tube is
+  refused with a message instead of silently storing a dead cut; a tube's CAD
+  seam appears in CURVE only once the tube is built.</li>
+<li>Fixes: a wheel on a shared near-straight arc could tear the seam (two
+  registry identities for one edge); boundary rows of bridged patches now land
+  verbatim (welds that were a few nanometres off); the symmetry ghost under
+  weld preview; the frozen tint on n-gons. The span wheel is faster on big
+  models.</li>
+</ul>
+<h2 id="080-alpha2">0.8.0-alpha.2<a class="headerlink" href="#080-alpha2" title="Permanent link">&para;</a></h2>
+<p>A maintenance pass on top of the Cover release:</p>
+<ul>
+<li><strong>Every message is English now</strong> — operator reports, errors and the
+  diagnostic blocks (<em>Copy diagnostics</em> / <em>Copy last error</em>) are readable
+  end to end.</li>
+<li><strong>Re-import CAD works on an empty target</strong> — re-importing a .stp before
+  the first patch was built used to add the new import as a copy and change
+  nothing; the source swap now happens exactly like on a working target.</li>
+<li><strong>CAD Tools 1.1.0 (2026-09-02)</strong> — the converter package attached to the
+  releases was still 1.0.0, speaking protocol 1, while every add-on since
+  0.4.0-alpha.5 needs protocol 2; STEP import failed at the handshake with
+  <em>"CAD converter protocol 1, addon expects 2"</em>. Download the 1.1.0 installer
+  from the release and run it over the old one.</li>
+</ul>
+<h2 id="080-alpha1">0.8.0-alpha.1<a class="headerlink" href="#080-alpha1" title="Permanent link">&para;</a></h2>
+<p>One headline feature, big enough to jump the version.</p>
+<ul>
+<li><strong>Cover</strong> — one live patch over a whole group of surfaces. Select a
+  connected group (a yellow outline previews the perimeter), <strong>Alt+<code>F</code></strong> —
+  the group is covered by a single patch; everything inside the rim,
+  selected or not, is ignored, and the covered surfaces stay untouched
+  underneath. The cover is a real patch afterwards: strategy switch,
+  G/R/S/D, span wheel on its boundary curves, parametric seams to the
+  neighbours; <code>X</code> removes it without a trace, undo works both ways. Built
+  for knurling, engraved detail and gamedev-style decimation of over-cut
+  CAD. Details: <a href="../patch/#cover-one-patch-over-many">PATCH</a>.</li>
+</ul>
+<h2 id="040-alpha5">0.4.0-alpha.5<a class="headerlink" href="#040-alpha5" title="Permanent link">&para;</a></h2>
+<p>A workflow-speed release: fewer clicks between "selected" and "tuned".</p>
+<ul>
+<li><strong>Selection survives operations.</strong> <code>F</code>, a fill-strategy change, <code>X</code>, Reset
+  and any rebuild keep the same patches selected — "select three fillets →
+  fill → switch to Smart fill → wheel the spans" is now one selection instead
+  of three. Only clicking empty space (or picking anew) clears it.</li>
+<li><strong>Mass span learned the V axis.</strong> Shift+Wheel over a multi-selection now
+  routes per patch: a curve at <strong>span 1 is pinned</strong> (the wheel never moves
+  it), and a patch whose whole transverse set is pinned turns its <strong>live V</strong>
+  instead — so a radial detail mass-tweaks without skips. Typed exact values
+  (panel <strong>U</strong>/<strong>V</strong>, <code>F9</code> <em>Set U/V</em>) still raise pinned curves on purpose.
+  Details: <a href="../patch/#spans-across-a-multi-selection">PATCH</a>.</li>
+<li><strong><code>E</code> — type the spans.</strong> Press <code>E</code>, type the number (echoes in the
+  header), <code>Enter</code> — no mouse travel to a panel field. Works in both modes:
+  PATCH lands each patch's live axis on the number, CURVE sets the selected
+  curves exactly.</li>
+<li><strong>Shift+<code>G</code> in CURVE</strong> selects every curve like the hovered one — same
+  type, open/closed, same length within a tolerance (a ring's length stands
+  in for its radius). The finer-grained sibling of the patch mass tweak; no
+  CAD oracle needed, OBJ imports included.</li>
+<li><strong>Mac: Shift-scroll drives the patch mass span.</strong> Trackpad / Magic Mouse
+  scrolling used to reach only the CURVE wheel; the PATCH gesture now gets
+  it too, with the same live-under-20 / accumulate-above behaviour.</li>
+</ul>
+<h2 id="040-alpha4">0.4.0-alpha.4<a class="headerlink" href="#040-alpha4" title="Permanent link">&para;</a></h2>
+<p>Everything since the public alpha.2:</p>
+<ul>
+<li><strong>Loft terminal on <code>D</code> (Rungs).</strong> New <strong>Rungs</strong> toggle (N-panel, Fill
+  options, off by default). With it on, dragging one density axis decisively
+  past its floor snaps that axis to <strong>loft</strong> (the gizmo label says so): zero
+  interior loops in that direction, and the two walls bounding the patch get
+  bridged rung for rung at the sparser wall's own vertices. Whichever handle
+  you pull is the loft direction. End caps, corner features and cut-out
+  shadows keep free triangles; ambiguous rims fall back to the plain fill.
+  From loft, only an upward drag brings density back — wobbles near the floor
+  never trip it. Needs <em>Lattice rails</em> on (default). Details in
+  <a href="../fills/#the-loft-terminal-rungs">Fill types</a>.</li>
+<li>The old almost-loft (density at the floor) is unchanged — stations, rails
+  and <code>G</code> all behave as before. Loft is a destination you choose, not a
+  threshold you cross.</li>
+<li><strong>Realtime span wheel over a multi-selection.</strong> Shift+Wheel on up to ~20
+  selected patches commits every notch live (the debounced "wait for the
+  picture" is gone at that scale; larger selections keep the one-commit
+  gesture).</li>
+<li><strong>U/V span labels.</strong> Selected patches label their two span axes right in the
+  viewport (yellow U / cyan V — the same colours as the panel's <strong>U</strong>/<strong>V</strong>
+  fields), so a multi-selection shows where <em>Spans U/V</em> will land. A <strong>Show UV
+  spans</strong> toggle turns the labels off for a quieter viewport. The panel also
+  gained the exact-entry <strong>U</strong>/<strong>V</strong> fields themselves (type a number, <code>0</code> =
+  leave as is).</li>
+<li><strong>Refresh stale</strong> (panel, Patch section) rebuilds every patch a neighbour's
+  change marked for a rebuild but that has not caught up — «tweaked the
+  cylinders, the flat patch they are cut into didn't follow». <strong>Commit</strong> now
+  runs the same sweep automatically, so a stale patch cannot be baked into the
+  final mesh.</li>
+<li><strong>Simpler converter setup.</strong> The <strong>CAD converter</strong> path now lives in the
+  add-on Preferences (set once, or never — the installer's drop-in slots are
+  found automatically), and the panel's status line verifies the binary by
+  itself: a brief <em>checking…</em> resolves to <em>protocol · OCCT</em> or a readable
+  error, without waiting for the first import. The <em>OCP python</em> field is gone
+  from the UI — the compiled converter is the supported path (the source route
+  stays available via <code>settings.json</code> for macOS/Linux, see
+  <a href="../install/#the-cad-converter-step-only">Install</a>).</li>
+<li><strong>Merge and UV Cut are pulled from the panel</strong> for now — both have known
+  problems; the operators remain reachable via <code>F3</code> search at your own risk.</li>
+</ul>
+<h2 id="040-alpha2-first-public-alpha">0.4.0-alpha.2 — first public alpha<a class="headerlink" href="#040-alpha2-first-public-alpha" title="Permanent link">&para;</a></h2>
+<p>The first build you can actually download:
+<a href="https://github.com/polozad/hardcraft-dist/releases/latest">releases</a>. Everything
+described under alpha.1 below is in, plus:</p>
+<ul>
+<li><strong>Auto-symmetry.</strong> New <strong>Auto-sym</strong> toggle (N-panel, Patch section): while
+  it is on, every first-time fill checks for a valid mirror twin across X=0 —
+  found one, and the patch becomes a Mirror X master on the spot (the twin is
+  covered by the mirror); no twin, and the fill lands plain, silently. Work
+  one half, hand-finish what isn't symmetric. Manual Alt-X is unchanged. The
+  twin test is deliberately conservative — mirrored surface vote, reciprocity,
+  matching area <em>and</em> matching shape — so a near-symmetric model whose two
+  sides are cut into different patches stays unpaired. See
+  <a href="../patch/#symmetry-and-weld-preview">Symmetry</a>.</li>
+<li><strong>Seamless re-export.</strong> Editing the CAD mid-retopo no longer costs you the
+  work: <strong>Re-import CAD</strong> (STEP, one click) / <strong>Rebind Target</strong> (Plasticity)
+  migrate patches, spans, strokes and freezes onto the re-exported source.
+  Untouched faces carry as-is; re-trimmed ones rebuild with their edits;
+  replaced surfaces rebuild fresh; a split face's old fill stays deletable as
+  one unit. See <a href="../sources/#re-importing-an-edited-cad">CAD sources</a>.
+  <em>Needs a current converter binary on the STEP path — an old one still
+  imports, but the rebind will ask you to update.</em></li>
+<li><strong>Brush reaches split seams.</strong> Relax and soft-move now move the vertices of a
+  region split; the coincident copies travel in lockstep so the seam never
+  tears. The outer boundary stays rigid as before.</li>
+<li><strong>New Target refuses a mesh that is not a raw export.</strong> Detection needs the
+  per-face CAD metadata; without it every patch is a guess. Rebind already
+  refused such a mesh — New Target now says the same thing instead of building
+  the guesswork (and instead of failing outright on a closed non-CAD mesh).
+  See <a href="../troubleshooting/#the-patches-make-no-sense">Troubleshooting</a>.</li>
+<li><strong>Fixed:</strong> wheeling a curve's span down to 1 no longer scrambles later
+  tweaks (values bounced 1→7→1 and neighbouring edits made the curve flicker).</li>
+<li><strong>Fixed:</strong> placing region splits could spontaneously <strong>freeze</strong> the patch
+  (the rebuild was mistaken for a hand edit).</li>
+</ul>
+<h2 id="040-alpha1-pulled">0.4.0-alpha.1 — pulled<a class="headerlink" href="#040-alpha1-pulled" title="Permanent link">&para;</a></h2>
+<p>The first build handed to anyone outside the project. It went out earlier than
+it should have and <strong>was pulled</strong>; alpha.2 above supersedes it. What is below
+still describes the tool accurately; it was the release that was premature, not
+the description.</p>
+<p>The version string says <code>alpha</code> because it means it: this is a working tool that
+has been used on real production retopology, not a finished product, and the
+pieces below are the ones that have survived live use.</p>
+<h3 id="what-it-does">What it does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Native edit-mode workflow.</strong> Hardcraft is a WorkSpaceTool (<code>HC Target</code>) with
+  two select modes, <strong>PATCH</strong> (pick surfaces, fill them) and <strong>CURVE</strong> (adjust
+  boundaries on what you built), sitting next to Blender's own vert/edge/face
+  modes. No modal state to enter or escape.</li>
+<li><strong>Boundary is CAD truth.</strong> Patch boundaries come from the CAD surface and are
+  refitted to it; the interior fill is free to be whatever reads best. Fixing the
+  boundary first is what makes the mixed result possible.</li>
+<li><strong>Smart fill.</strong> Curved surfaces get quad grids, tubes get rings, developable
+  strips get lofts; flat faces, features and cut-outs get triangles. Cut a
+  surface and each region is filled by its own type, then welded at the seam.</li>
+<li><strong>Parametric edits that survive.</strong> Span, density, contour, inset and force-tri
+  are stored per patch and replay on every rebuild — through undo, save, and
+  re-welding. Wheel a curve's span and both sides of the seam follow.</li>
+<li><strong>Brush.</strong> A modeless brush that relaxes and soft-moves the retopo while
+  keeping it on the CAD surface. Strokes are recorded and replay on rebuild.</li>
+<li><strong>Mirror symmetry.</strong> Flag a patch and its mirror is generated and welded for
+  you, including a live preview of the virtual side.</li>
+<li><strong>STEP import</strong> through a separate converter package (see below), with
+  per-body objects, CAD-driven UV, and normal repair on import.</li>
+<li><strong>UV.</strong> Charts are packed as you build, and the packing is incremental — an
+  existing chart does not jump when you add another patch.</li>
+<li><strong>Batch spans.</strong> Shift+Wheel over a multi-selection in PATCH drives the
+  transverse span of every selected patch at once, committing one rebuild per
+  gesture; <code>F9</code> adds the second axis.</li>
+<li><strong>G/R/S/D on two or three patches.</strong> The gizmo drives the active patch and the
+  rest of the selection follows the same relative change, each anchored on its
+  own value and matched by direction rather than by axis index.</li>
+<li><strong>Reporting tools.</strong> Three buttons collect a problem report for you — the
+  build and settings passport, the mesh complaint with its patch address, and
+  the last errors. Clipboard text only; there is no telemetry in this add-on.
+  See <a href="../reporting/">Reporting a problem</a>.</li>
+</ul>
+<h3 id="getting-it">Getting it<a class="headerlink" href="#getting-it" title="Permanent link">&para;</a></h3>
+<p>Not from here, for now — the build was pulled. Since then releases ship as ONE
+zip covering every supported Blender. See <a href="../install/">Install</a>.</p>
+<h3 id="known-limits-in-this-alpha">Known limits in this alpha<a class="headerlink" href="#known-limits-in-this-alpha" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>The STEP converter is Windows-only for now.</strong> macOS and Linux can still
+  import STEP by pointing the add-on at a Python that carries the OpenCASCADE
+  bindings (the <code>STEP_CONVERTER_PY</code> key in <code>settings.json</code> — see
+  <a href="../install/#the-cad-converter-step-only">Install</a>); a packaged converter for
+  those platforms is not built yet. The Plasticity bridge and OBJ paths need
+  none of this.</li>
+<li><strong>The converter package is not signed.</strong> Windows SmartScreen warns once on
+  first run. Every release publishes a SHA-256 next to the file so you can check
+  what you downloaded.</li>
+<li><strong>Detection needs raw CAD metadata.</strong> Point Hardcraft at an unmodified
+  Plasticity or STEP import. A mesh that has been edited, joined or re-exported
+  has lost the metadata detection reads, and the results degrade accordingly.</li>
+<li><strong>Interior structure on genuinely complex patches</strong> is the known weak spot: a
+  lattice row that cannot seat gets stitched with triangles, and the structure
+  can shift when a boundary span changes. Simple and moderately complex surfaces
+  are solid; this is where the tool is honestly still rough.</li>
+<li><strong>Dirty shading on import</strong> is usually the CAD, not the importer — rebuilding
+  the offending surfaces in Plasticity fixes more than any repair pass here.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GPL-3.0-or-later
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
